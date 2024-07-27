@@ -11,12 +11,21 @@ A crud application that allows for CRUD (Create, Read, Update, Delete) operation
 - Select users and send email with their information
 - Responsive UI with a modern design
 
+### Home
 
 ![Home](./screenshot/Home.png)
 
-![Add User](./ccreenshot/AddUser.png)
+
+### Add User
+
+![Add User](./screenshot/AddUser.png)
+
+
+### Update User
 
 ![Update User](./screenshot/UpdateUser.png)
+
+
 
 ## Technologies Used
 
