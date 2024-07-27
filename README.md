@@ -30,33 +30,49 @@ A crud application that allows for CRUD (Create, Read, Update, Delete) operation
 
 
 ### Installation
-
-1. Clone the repository:
+Clone the repository:
 
    ```sh
    git clone https://github.com/dynamo134/user-management-system.git
+   ```
 
-   ```sh
-2. Navigate to the project directory:
+Navigate to the project directory:
 
    ```sh
    cd CRUD
+   ```
 
-   ```sh
-3. Install the dependencies for both the frontend and backend:
+Install the dependencies for both the frontend and backend:
 
     ```sh
     cd frontend
     npm install
-
+```
+```sh
     cd ../backend
     npm install
- ```sh
-
+ ```
 
 ## Environment Variables
 ```sh
- MONGO_URI=your_mongodb_connection_string
- EMAIL_USER=your_email@example.com
- EMAIL_PASS=your_email_password
+   MONGO_URI=your_mongodb_connection_string
+   EMAIL_USER=your_email@example.com
+   EMAIL_PASS=your_email_password
+```
+
+## Running the Application
+
+Start the backend server:
+
 ```sh
+   cd backend
+   npm run dev
+```
+
+Start the frontend development server:
+
+```sh
+   cd frontend
+   npm run dev
+```
+
