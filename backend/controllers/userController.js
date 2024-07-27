@@ -2,6 +2,10 @@ const User = require("../models/User");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const phoneRegex = /^(\+\d{1,3})?\d{10}$/; // Matches optional country code + 10 digit phone number
+
 
 exports.getUsers = async (req, res) => {
   const users = await User.find();
@@ -10,10 +14,33 @@ exports.getUsers = async (req, res) => {
 };
 
 exports.addUser = async (req, res) => {
-  const user = new User(req.body);
-  await user.save();
-  res.json(user);
+  const { name, phone, email, hobbies } = req.body;
+
+  // Validate input
+  if (!name || !phone || !email || !hobbies) {
+    return res.status(400).json({ message: "Please fill all required fields." });
+  }
+  
+  //validate the email formate
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ message: "Invalid email format." });
+  }
+  //validate the phone number
+  if (!phoneRegex.test(phone)) {
+     return res.status(400).json({message:"Invalid phone number."});
+   }
+  try {
+    const user = new User({ name, phone, email, hobbies });
+    // Save user to database
+    await user.save();
+    //console.log(user);
+    res.status(201).json(user);
+  } catch (error) {
+    // Handle errors (e.g., database errors)
+    res.status(500).json({ message: "Server error", error });
+  }
 };
+
 
 exports.deleteUser = async (req, res) => {
   await User.findByIdAndDelete(req.params.id);
