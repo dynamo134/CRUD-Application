@@ -25,7 +25,6 @@ A crud application that allows for CRUD (Create, Read, Update, Delete) operation
 - Node.js
 - Express.js
 - MongoDB
-- Mongoose
 - Nodemailer
 
 
@@ -56,7 +55,7 @@ Install the dependencies for both the frontend and backend:
 
 ## Environment Variables
 ```sh
-   MONGO_URI=your_mongodb_connection_string
+   MONGO_DB_URI=your_mongodb_connection_string
    EMAIL_USER=your_email@example.com
    EMAIL_PASS=your_email_password
 ```
