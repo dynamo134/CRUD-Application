@@ -5,7 +5,9 @@ import UserForm from "../components/UserForm";
 import UserTable from "../components/UserTable";
 import { toast } from "react-toastify";
 
-axios.defaults.baseURL = "http://localhost:5000/";
+// axios.defaults.baseURL = "http://localhost:5000/";
+
+axios.defaults.baseURL = "https://crud-application-if4d.onrender.com";  //deployment
 
 export default function Home() {
   const [users, setUsers] = useState([]);

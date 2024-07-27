@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-axios.defaults.baseURL = "http://localhost:5000/";
+// axios.defaults.baseURL = "http://localhost:5000/"; //
+axios.defaults.baseURL = "https://crud-application-if4d.onrender.com";  //deployment
 
 export default function UserForm({
   user,
