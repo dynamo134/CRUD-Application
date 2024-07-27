@@ -44,14 +44,15 @@ Navigate to the project directory:
 
 Install the dependencies for both the frontend and backend:
 
-    ```sh
+   ```sh
     cd frontend
     npm install
-```
-```sh
+   ```
+
+   ```sh
     cd ../backend
     npm install
- ```
+   ```
 
 ## Environment Variables
 ```sh
