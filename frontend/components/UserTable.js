@@ -6,15 +6,6 @@ export default function UserTable({
   handleEditClick,
   onCheckboxChange,
 }) {
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`/api/users/${id}`);
-      deleteUser(id);
-    } catch (error) {
-      console.error("Failed to delete user:", error);
-    }
-  };
-
   return (
     <div className="container mx-auto p-4">
       <div className="overflow-x-auto bg-white shadow-md rounded-lg">
@@ -39,7 +30,7 @@ export default function UserTable({
               <th className="py-3 px-4 text-left text-sm font-medium text-gray-700">
                 Hobbies
               </th>
-              <th className="py-3 px-4 text-left text-sm font-medium text-gray-700">
+              <th className="py-3 px-10 text-left text-sm font-medium text-gray-700">
                 Actions
               </th>
             </tr>
@@ -67,7 +58,7 @@ export default function UserTable({
                     Edit
                   </button>
                   <button
-                    onClick={() => handleDelete(user._id)}
+                    onClick={() => deleteUser(user._id)}
                     className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition"
                   >
                     Delete
